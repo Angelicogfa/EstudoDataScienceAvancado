@@ -43,7 +43,7 @@ def compute_prediction(data: dict) -> float:
     p_lgbm = mdl_lgbm.predict_proba(feature_array)[0][1]
 
     p = 0.2 * p_lr + 0.8 * p_lgbm
-    __log_data(data, feature_array, p)
+    ## __log_data(data, feature_array, p)
     return p
 
 def __log_data(data: dict, feature: csr_matrix, p: float):

@@ -18,7 +18,7 @@ def download_search_page(query: str) -> []:
         link = url.format(query=query)
         drive.get(link)
 
-        html = drive.find_element_by_tag_name('html')
+        # html = drive.find_element_by_tag_name('html')
 
         # while True:
         #     html.send_keys(Keys.END)
