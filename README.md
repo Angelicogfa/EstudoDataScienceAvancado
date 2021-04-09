@@ -4,3 +4,4 @@ Este projeto tem como finalidade aprender algumas técnicas avançadas de data s
 
 * Active Learning
 * Ensemble
+* Deploy de um modelo
