@@ -4,11 +4,14 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options 
 
+options = Options()
+options.add_argument('--no-sandbox')
+options.add_argument('--headless')
+options.add_argument('--disable-gpu')
+options.add_argument("--start-maximized")
+
 def download_search_page(query: str) -> []:
     url = f'https://www.youtube.com/results?search_query={query}'
-
-    options = Options()
-    options.add_argument('--headless')
 
     with webdriver.Chrome(chrome_options=options) as drive:
         resources = []
@@ -102,10 +105,6 @@ def __extract_page_to_dict(driver: webdriver.Chrome) -> dict:
 
 def download_video_page(link: str) -> dict: 
     
-    options = Options()
-    options.add_argument('--headless')
-    options.add_argument("--start-maximized")
-
     with webdriver.Chrome(chrome_options=options) as driver:
 
         driver.get(link)
